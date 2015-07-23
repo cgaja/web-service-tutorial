@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wsdl:definitions name="Calculate"
-   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-   xmlns:di="http://www.example.org/schema/Calculate"
-   xmlns:tns="http://www.example.org/contract/Calculate"
-   targetNamespace="http://www.example.org/contract/Calculate">
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:di="http://www.example.org/schema/Calculate"
+	xmlns:tns="http://www.example.org/contract/Calculate" targetNamespace="http://www.example.org/contract/Calculate">
 	<wsdl:types>
 		<xsd:schema targetNamespace="http://www.example.org/schema/Calculate">
 			<xsd:element name="DoubleIt">
@@ -38,6 +35,41 @@
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
+
+			<xsd:element name="Substract">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="factor1" type="xsd:int"></xsd:element>
+						<xsd:element name="factor2" type="xsd:int">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SubstractResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="sub" type="xsd:int"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="Multiply">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="factor1" type="xsd:int"></xsd:element>
+						<xsd:element name="factor2" type="xsd:int">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="MultiplyResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="mul" type="xsd:int"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
 		</xsd:schema>
 	</wsdl:types>
 	<wsdl:message name="DoubleItRequest">
@@ -52,6 +84,19 @@
 	<wsdl:message name="AddResponse">
 		<wsdl:part name="parameters" element="di:AddResponse"></wsdl:part>
 	</wsdl:message>
+	<wsdl:message name="SubstractRequest">
+		<wsdl:part name="parameters" element="di:Substract"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="SubstractResponse">
+		<wsdl:part name="parameters" element="di:SubstractResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="MultiplyRequest">
+		<wsdl:part name="parameters" element="di:Multiply"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="MultiplyResponse">
+		<wsdl:part name="parameters" element="di:MultiplyResponse"></wsdl:part>
+	</wsdl:message>
+
 	<wsdl:portType name="CalculatePortType">
 		<wsdl:operation name="DoubleIt">
 			<wsdl:input message="tns:DoubleItRequest" />
@@ -60,6 +105,14 @@
 		<wsdl:operation name="Add">
 			<wsdl:input message="tns:AddRequest"></wsdl:input>
 			<wsdl:output message="tns:AddResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Substract">
+			<wsdl:input message="tns:SubstractRequest"></wsdl:input>
+			<wsdl:output message="tns:SubstractResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Multiply">
+			<wsdl:input message="tns:MultiplyRequest"></wsdl:input>
+			<wsdl:output message="tns:MultiplyResponse"></wsdl:output>
 		</wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="CalculateBinding" type="tns:CalculatePortType">
@@ -75,6 +128,24 @@
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="Add">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Substract">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Multiply">
 			<soap:operation soapAction="" />
 			<wsdl:input>
 				<soap:body use="literal" />

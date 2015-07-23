@@ -13,5 +13,14 @@ public class CalculatePortTypeImpl implements CalculatePortType {
 	public int add(int factor1, int factor2) {
 		return factor1 + factor2;
 	}
+	
+	public int substract(int factor1, int factor2) {
+		return factor1 - factor2;
+	}
+	
+	public int multiply(int factor1, int factor2) {
+		return factor1 * factor2;
+	}
+
 
 }

@@ -26,15 +26,28 @@ public class WSClient {
 		doubleIt(port, -10);
 		add(port, 7, 4);
 		add(port, 7, 7);
+		substract(port, 7, 4);
+		substract(port, 4, 7);
+		multiply(port, 3, 4);
 	}
 
 	public static void doubleIt(CalculatePortType port, int numToDouble) {
 		int resp = port.doubleIt(numToDouble);
 		System.out.println("The number " + numToDouble + " doubled is " + resp);
 	}
-	
+
 	public static void add(CalculatePortType port, int factor1, int factor2) {
 		int resp = port.add(factor1, factor2);
 		System.out.println("The sum of " + factor1 + " and " + factor2 + " is " + resp);
+	}
+
+	public static void substract(CalculatePortType port, int factor1, int factor2) {
+		int resp = port.substract(factor1, factor2);
+		System.out.println("The difference of " + factor1 + " and " + factor2 + " is " + resp);
+	}
+
+	public static void multiply(CalculatePortType port, int factor1, int factor2) {
+		int resp = port.multiply(factor1, factor2);
+		System.out.println("The product of " + factor1 + " and " + factor2 + " is " + resp);
 	}
 }
