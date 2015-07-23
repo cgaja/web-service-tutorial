@@ -1,0 +1,9 @@
+org/example/schema/calculate/package-info.class
+org/example/contract/calculate/CalculateService.class
+org/example/schema/calculate/AddResponse.class
+org/example/schema/calculate/Add.class
+org/example/schema/calculate/DoubleItResponse.class
+service/CalculatePortTypeImpl.class
+org/example/schema/calculate/ObjectFactory.class
+org/example/schema/calculate/DoubleIt.class
+org/example/contract/calculate/CalculatePortType.class
